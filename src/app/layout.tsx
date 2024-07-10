@@ -66,7 +66,7 @@ export default function RootLayout({
         {children}
 
         <footer className="flex gap-2 cursor-pointer items-center w-full justify-center">
-          <button>
+          <button href="https://discord.com/users/535117705854844940">
             <Image
               src="/discord.svg"
               alt="Discord Logo"
