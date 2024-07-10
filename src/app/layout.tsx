@@ -6,6 +6,8 @@ import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import Link from 'next/link'
+
 export const metadata: Metadata = {
   title: "$",
   description: "Portfolio",
@@ -22,19 +24,19 @@ export default function RootLayout({
         <nav className="fixed p-5 z-10 max-w-8xl w-full items-center justify-between font-mono text-sm lg:flex">
           <ul className="fixed pointer space-x-8 left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 font-thin">
             <li className="cursor-pointer hover:text-green-400 transition duration-300 ease-in">
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li className="cursor-pointer hover:text-green-400 transition duration-300 ease-in">
-              <a href="/about">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li className="cursor-pointer hover:text-green-400 transition duration-300 ease-in">
-              <a href="/skills">Skills</a>
+              <Link href="/skills">Skills</Link>
             </li>
             <li className="cursor-pointer hover:text-green-400 transition duration-300 ease-in">
-              <a href="/projects">Projects</a>
+              <Link href="/projects">Projects</Link>
             </li>
             <li className="cursor-pointer hover:text-green-400 transition duration-300 ease-in">
-              <a href="/contact">Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
           <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
@@ -66,7 +68,7 @@ export default function RootLayout({
         {children}
 
         <footer className="flex gap-2 cursor-pointer items-center w-full justify-center">
-          <button href="https://discord.com/users/535117705854844940">
+          <Link href="https://discord.com/users/535117705854844940">
             <Image
               src="/discord.svg"
               alt="Discord Logo"
@@ -75,8 +77,8 @@ export default function RootLayout({
               height={24}
               priority
             />
-          </button>
-          <button>
+          </Link>
+          <Link href="/">
             <Image
               src="/instagram.svg"
               alt="İnstagram Logo"
@@ -85,8 +87,8 @@ export default function RootLayout({
               height={20}
               priority
             />
-          </button>
-          <button>
+          </Link>
+          <Link href="/">
             <Image
               src="/x-twitter.svg"
               alt="X Logo"
@@ -95,8 +97,8 @@ export default function RootLayout({
               height={20}
               priority
             />
-          </button>
-          <button>
+          </Link>
+          <Link href="https://github.com/lilWolf011">
             <Image
               src="/github.svg"
               alt="Github Logo"
@@ -105,7 +107,7 @@ export default function RootLayout({
               height={20}
               priority
             />
-          </button>
+          </Link>
         </footer>
       </body>
     </html>
