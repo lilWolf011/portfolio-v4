@@ -1,14 +1,11 @@
-"use client"; // Assuming this is for Vercel Next.js deployments
+import React, { useState } from 'react';
+import Cursor from '../components/cursor';
+import Discord from '../components/discord';
 
-import { useState } from "react";
-import Cursor from "../components/cursor";
-import Discord from "../components/discord";
-
-export default function About() {
+export default function ContactPage() {
   const [state, setState] = useState({ username:"", email: "", message: "" });
 
-  // Function to handle input changes
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setState((prevState) => ({
       ...prevState,
@@ -16,29 +13,9 @@ export default function About() {
     }));
   };
 
-  // Function to handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you can access state.username, state.email, state.message for further processing
-    console.log("Form submitted:", state);
-    
-    // Example of how to fetch data or perform other async operations
-    // Replace with your actual API call or logic
-    try {
-      const response = await fetch("your-api-endpoint", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(state),
-      });
-      const data = await response.json();
-      console.log("Response:", data);
-      // Optionally reset the form state after successful submission
-      setState({ username: "", email: "", message: "" });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
+    // Handle form submission logic here
   };
 
   return (
